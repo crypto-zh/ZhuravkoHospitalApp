@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="ZhuravkoHospitalApp.UserControls.ScheduleHeaderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ZhuravkoHospitalApp.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" DataContextChanged="UserControl_DataContextChanged">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Name="BlockDay" Style="{StaticResource BlockHeaderDay}" Text="СБ"></TextBlock>
+            <TextBlock x:Name="BlockDate" Style="{StaticResource BlockCommon}" Width="auto" TextAlignment="Center"></TextBlock>
+        </StackPanel>
+    </Grid>
+</UserControl>
