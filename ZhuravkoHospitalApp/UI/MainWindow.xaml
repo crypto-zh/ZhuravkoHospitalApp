@@ -10,14 +10,19 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Специализация:" Style="{StaticResource BlockCommon}" Width="auto"></TextBlock>
-            <ComboBox Name="ComboSpecialization" SelectionChanged="ComboSpecialization_SelectionChanged" DisplayMemberPath="Name"></ComboBox>
-            <TextBlock Text="Врач:" Style="{StaticResource BlockCommon}" Width="auto" Margin="40 5 5 5"></TextBlock>
-            <ComboBox DisplayMemberPath="FullName" Name="ComboDoctor" SelectionChanged="ComboDoctor_SelectionChanged"></ComboBox>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Специализация:" Style="{StaticResource BlockCommon}" Width="auto"></TextBlock>
+                <ComboBox Name="ComboSpecialization" SelectionChanged="ComboSpecialization_SelectionChanged" DisplayMemberPath="Name"></ComboBox>
+                <TextBlock Text="Врач:" Style="{StaticResource BlockCommon}" Width="auto" Margin="40 5 5 5"></TextBlock>
+                <ComboBox DisplayMemberPath="FullName" Name="ComboDoctor" SelectionChanged="ComboDoctor_SelectionChanged"></ComboBox>
+
+            </StackPanel>
         </StackPanel>
         <DataGrid x:Name="DGridShedule" Grid.Row="1" SelectionUnit="Cell">
         </DataGrid>
+        <Button Grid.Row="3" Content="Распечатать" Name="BtnPrint" Click="BtnPrint_Click"></Button>
     </Grid>
 </Window>

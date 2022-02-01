@@ -11,6 +11,8 @@ namespace ZhuravkoHospitalApp.Entities
         public int SheduleId { get; set; }
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }
+        public DateTime Date { get; set; }
+        public ScheduleHeader ScheduleHeader { get; set; }
         public AppointmentType AppointmentType { get; set; }
     }
 }

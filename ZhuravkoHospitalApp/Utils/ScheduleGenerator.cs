@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ZhuravkoHospitalApp.Utils
 {
@@ -48,11 +49,14 @@ namespace ZhuravkoHospitalApp.Utils
                     var appointmentsPerInterval = new List<Entities.ScheduleAppointment>();
                     foreach (var header in headers)
                     {
+                       
                         var currentShedule = doctorSchedule.FirstOrDefault(p => p.Date == header.Date);
                         var scheduleAppointment = new Entities.ScheduleAppointment
                         {
                             SheduleId = currentShedule?.Id ?? -1,
                             StartTime = time,
+                            Date = header.Date,
+                            ScheduleHeader = header,
                             EndTime = time.Add(TimeSpan.FromMinutes(30))
 
                         };
@@ -80,6 +84,8 @@ namespace ZhuravkoHospitalApp.Utils
                             scheduleAppointment.AppointmentType = Entities.AppointmentType.DayOff;
                         }
                         appointmentsPerInterval.Add(scheduleAppointment);
+
+
                     }
                     result.Add(appointmentsPerInterval);
                     time = time.Add(TimeSpan.FromMinutes(30));
